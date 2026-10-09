@@ -15,7 +15,7 @@ export const getProductById = async (req: any, res: any) => {
   try {
     const id: any = parseInt(req.params.id);
     if (isNaN(id) || id <= 0)
-      return res.status(400).json({ error: "ID inválido" });
+      return res.status(400).json({ error: "ID invalido" });
 
     const [rows]: any = await pool.query(
       "SELECT * FROM products WHERE id = ? AND active = TRUE",
