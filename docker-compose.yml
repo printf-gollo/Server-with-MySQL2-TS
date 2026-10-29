@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  db_mysql:
+    image: mysql:8.0
+    container_name: prestamos_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root # Contraseña del usuario root
+      MYSQL_DATABASE: prestamos_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql # persistencia
+
+volumes:
+  mysql_data:
